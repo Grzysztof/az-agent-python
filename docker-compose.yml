@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  az-agent:
+    container_name: az-agent
+    image: azagent-python-docker
+    environment:
+    - AZP_URL=${AZP_URL}
+    - AZP_TOKEN=${AZP_TOKEN}
+    - AZP_AGENT_NAME=${AZP_AGENT_NAME:-AZURE_DOCKER_AGENT}
+    - AZP_POOL=${AZP_POOL:-DOCKER_AGENTS_POOL}
+    volumes:
+    - /var/run/docker.sock:/var/run/docker.sock:ro
