@@ -21,7 +21,7 @@ ENV TARGETARCH=linux-x64
 
 WORKDIR /azp
 # Copy docker
-COPY --from=docker:20.10 /usr/local/bin/docker /usr/local/bin/
+COPY --from=docker:22.04 /usr/local/bin/docker /usr/local/bin/
 
 COPY ./start.sh .
 RUN chmod +x start.sh
