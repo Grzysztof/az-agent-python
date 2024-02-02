@@ -26,4 +26,8 @@ COPY --from=docker /usr/local/bin/docker /usr/local/bin/
 COPY ./start.sh .
 RUN chmod +x start.sh
 
+RUN useradd agent
+RUN chown agent ./
+USER agent
+
 ENTRYPOINT [ "./start.sh" ]
